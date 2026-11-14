@@ -29,9 +29,11 @@ curl -s -X POST https://canaryguard-402.onrender.com/v1/sanitize/preview \
 Response:
 ```json
 {
-  "flagged": true,
-  "threats": ["instruction_injection"],
-  "cleanContent": "Untrusted scraped text: "
+  "status": "blocked",
+  "risk_score": 0.95,
+  "injection_detected": true,
+  "threats_neutralized": ["instruction_override"],
+  "sanitized_content": "Untrusted scraped text: "
 }
 ```
 
